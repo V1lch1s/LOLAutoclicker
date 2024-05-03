@@ -1,4 +1,4 @@
-# **LOLAutoclicker** 💀
+# **LOL Autoclicker** 💀
 ---
 
 #**Warning**
