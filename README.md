@@ -1,10 +1,10 @@
+# **LOLAutoclicker** 💀
 ---
 #**Warning**
 The program provided in this repository is outdated and it was not possible to update it after the end of 2023 due to new terms and conditions within the game that include the implementation of the famous and controversial Riot Vanguard anti-cheat that works as a driver at the kernel level, however, I don't have the time or need to update and recondition it to work with a DMA device or as a driver that bypasses Riot Vanguard. It is considered within the focus of cheating within the game and the distorted concept about what they (at their convenience) consider punishable. This application was developed in Python with an experimental and educational purpose and at no time was there any intention to use it as a means or as a trap within the game. I am not responsible for any misuse of this application and it should be used **AT YOUR OWN RISK**.
 The consequences vary according to Riot's terms and conditions and include the banning of your account(s) and, in the most extreme case, your HWID (unique identifier for each device and is usually not alterable).
----
 
-# **LOLAutoclicker** 💀
+
 ---
 This is a League of Legends complex bot. Able to Spam Games again the AI again and again and doesn't stop until you keep pressed [ESC]
 
@@ -28,7 +28,7 @@ El desarrollo de este bot fue utilizando librerías de reconocimiento y automati
 
 # Scripts
 ## AFKhandler.py
-'''
+```
 from Clicks import *
 from BuyItem import *
 import keyboard
@@ -132,13 +132,13 @@ def AFKhandler():
 if __name__ == "__main__":
     
     AFKhandler()
-'''
+```
 
 This code is the responsible of not being detected by LeaveBuster as an AFK if the AFK window is spawned in the game.
 ---
 
 ## BuyItem.py
-'''
+```
 import keyboard
 import pywintypes
 from Clicks import *
@@ -212,13 +212,13 @@ def BuyItem():
 if __name__ == "__main__":
     
     BuyItem()
-'''
+```
 
 This code pick an item from the store in specific moments inside the program execution, for example, before start the route.
 ---
 
 ## Clicker.py
-'''
+```
 #Bot de League of Legends (Explorador)
 import keyboard
 import pywintypes
@@ -633,13 +633,13 @@ def main():
 if __name__ == "__main__":
 
     main()
-'''
+```
 
 This code was expected to be the Core Script, but over the development time it became more difficult to execute and understand, so I turned it into a subroutine, which in turn is the central routine of the program's operation.
 ---
 
 ## Clicks.py
-'''
+```
 import pyautogui
 import time
 import win32api, win32con #pywin32
@@ -663,13 +663,13 @@ def leftClick(x,y):
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
     except pywintypes.error:
         time.sleep(1)
-'''
+```
 
 This is a small library with a couple of functions used around the whole program. Without a doubt one of the 2 most important scripts.
 ---
 
 ## DetectionTest.py
-'''
+```
 from Clicks import *
 import pyautogui
 import keyboard
@@ -699,13 +699,13 @@ while keyboard.is_pressed("Esc") != True:
                 
         except TypeError or OSError:
             pass
-'''
+```
 
 This is not part of the app's schematic, but was used to test the accuracy of detecting game elements in app development by running this script instead of the program.
 ---
 
 ## BotLOL.py
-'''
+```
 #Bot de League of Legends (Explorador)
 import threading
 import subprocess
@@ -729,7 +729,7 @@ afkhandler_thread.start()
 # Esperar a que todos los subprocesos terminen
 main_thread.join()
 afkhandler_thread.join()
-'''
+```
 
 This is the main script of the app, it uses threading to divide the execution into parts of the program so that they can all be executed at the same time as subprocesses, thus following a layered execution scheme, where the lowest layer executes the autoclicker and in the highest one the program is executed that checks that everything is in order (AFKhandler.py).
 ---
