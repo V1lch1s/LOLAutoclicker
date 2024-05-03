@@ -1,6 +1,8 @@
 # **LOLAutoclicker** 💀
 ---
+
 #**Warning**
+
 The program provided in this repository is outdated and it was not possible to update it after the end of 2023 due to new terms and conditions within the game that include the implementation of the famous and controversial Riot Vanguard anti-cheat that works as a driver at the kernel level, however, I don't have the time or need to update and recondition it to work with a DMA device or as a driver that bypasses Riot Vanguard. It is considered within the focus of cheating within the game and the distorted concept about what they (at their convenience) consider punishable. This application was developed in Python with an experimental and educational purpose and at no time was there any intention to use it as a means or as a trap within the game. I am not responsible for any misuse of this application and it should be used **AT YOUR OWN RISK**.
 The consequences vary according to Riot's terms and conditions and include the banning of your account(s) and, in the most extreme case, your HWID (unique identifier for each device and is usually not alterable).
 
