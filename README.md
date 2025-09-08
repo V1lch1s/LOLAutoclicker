@@ -12,7 +12,7 @@ This is a League of Legends complex bot. Able to Spam Games again the AI again a
 
 The first time you need to wait a few minutes in-game to generate cache for this bot and so that its execution can be easier and more fluid. It is very important to **previously execute in a controlled environment**
 
-![ExecutionSamp](https://github.com/user-attachments/assets/b9b796d5-5587-4066-b350-f26cd05391fe)
+![Execution Samp](https://github.com/user-attachments/assets/386cebb4-12cd-475a-9000-981ab9cf8c68)
 
 
 ---
