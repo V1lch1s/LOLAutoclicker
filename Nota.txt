@@ -1,0 +1,25 @@
+En los ajustes: CLIENTE/GENERAL
+-Activar el modo de bajo rendimiento 
+[**Este bot requiere Python**]
+
+-Ajustar el tamaño de la ventana a 1600 x 900
+
+Acceder a la carpeta de instalación de Riot Games: .\Riot Games\League of Legends\Config
+Reemplazar el archivo PersistedSettings.json por el proporcionado.
+Accede a las propiedades de lectura y activa la sección "Solo Lectura/Read Only".
+
+Ejecutar en CMD de windows con privilegios de administrador:
+cd .\BotLoL
+BotLOL.py
+
+Para Cerrar, mantén presionado 'Esc' en el CMD hasta que 
+se detenga la ejecución.
+
+Asegurarse de que la X de cerrar ventana de las otras apps estén sobre un contexto
+BLANCO, de otra forma, lo detecta como ProfessorQuit.jpg y las cierra.
+
+Para instalar las librerías necesarias, ejecuta los siguientes comandos:
+pip install pillow
+pip install keyboard
+pip install PyGetWindow
+pip install pywin32

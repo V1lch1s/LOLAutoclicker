@@ -1,0 +1,81 @@
+---
+title: BotLoL.py
+---
+flowchart TD
+    start@{shape: circle, label: "Start"}
+    exitKeys@{shape: hex, label: "SI se presiona ESC"}
+    buscaPartida["Click en _Buscar partida_"]
+    aceptarPartida["Click en **_Aceptar_**"]
+    gameDetection@{shape: hex, label: "SI se detecta el juego Y No se presionó ESC"}
+    finish@{shape: circle, label: "Fin"}
+
+    subgraph Selección de campeones
+        clickPersonaje1["Click Dr.Mundo"]
+        seleccionarPersonaje@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar["Click **_Fijar_** Dr.Mundo"]
+
+        clickPersonaje2["Click Elise"]
+        seleccionarPersonaje2@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar2["Click **_Fijar_** Elise"]
+        
+        clickPersonaje3["Click Yone"]
+        seleccionarPersonaje3@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar3["Click **_Fijar_** Yone"]
+        
+        clickPersonaje4["Click Aatrox"]
+        seleccionarPersonaje4@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar4["Click **_Fijar_** Aatrox"]
+        
+        clickPersonaje5["Click Mordekaiser"]
+        seleccionarPersonaje5@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar5["Click **_Fijar_** Mordekaiser"]
+        
+        clickPersonaje6["Click Nasus"]
+        seleccionarPersonaje6@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar6["Click **_Fijar_** Nasus"]
+        
+        clickPersonaje7["Click Cho'Gath"]
+        seleccionarPersonaje7@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar7["Click **_Fijar_** Cho'Gath"]
+        
+        clickPersonaje8["Click Kayn"]
+        seleccionarPersonaje8@{shape: hex, label: "SI **_Fijar_** está disponible Y No se presionó ESC"}
+        clickFijar8["Click **_Fijar_** Kayn"]
+        
+        seleccionarRunas["Seleccionar Runas"]
+    end
+
+    subgraph Jugar el Juego
+        lockCamera["fijar la cámara"]
+        buyItems["Comprar ítems"]
+        moveAroundMap["Mover a ubicación 1 del Minimapa"]
+        moveAroundMap2["Mover a ubicación 2 del Minimapa"]
+        moveAroundMap3["Mover a ubicación 3 del Minimapa"]
+        moveAroundMap4["Mover a ubicación 4 del Minimapa"]
+        back2base["Regresar a base"]
+    end
+
+    subgraph "AFK handler (hilo paralelo)"
+        start2@{shape: circle, label: "Start"}
+        exitKeys2@{shape: hex, label: "SI se presiona ESC"}
+        conexionOut@{shape: hex, label: "SI se desconecta de la partida Y No se presionó ESC"}
+        reconectar["Click *_Aceptar_*"]
+        reconectar2["Click *_Reconectar_*"]
+        leaveBusterHandle@{shape: hex, label: "SI se detecta inactividad Y No se presionó ESC"}
+        finish2@{shape: circle, label: "Fin"}
+    end
+
+    start --> exitKeys --> finish
+    exitKeys --"Else"--> gameDetection --> buyItems --> moveAroundMap --> moveAroundMap2 --> moveAroundMap3 --> moveAroundMap4 --> back2base --> buyItems
+    exitKeys --"Else"--> start2 --> exitKeys2 --> finish2
+    exitKeys2 --"Else"--> conexionOut
+    conexionOut --"Else"--> leaveBusterHandle --"Retoma el funcionamiento"--> back2base --"AFK Handler"--> lockCamera --"AFK Handler"--> buyItems --"AFK handler"--> exitKeys2
+    conexionOut --> reconectar --> reconectar2 --> exitKeys2
+    gameDetection --"Else"--> buscaPartida --"Esperar"--> aceptarPartida --"Esperar"--> clickPersonaje1 --> seleccionarPersonaje --> clickFijar --> seleccionarRunas
+    seleccionarPersonaje --"Else"--> clickPersonaje2 --> seleccionarPersonaje2 --> clickFijar2 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje2 --"Else"--> clickPersonaje3 --> seleccionarPersonaje3 --> clickFijar3 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje3 --"Else"--> clickPersonaje4 --> seleccionarPersonaje4 --> clickFijar4 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje4 --"Else"--> clickPersonaje5 --> seleccionarPersonaje5 --> clickFijar5 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje5 --"Else"--> clickPersonaje6 --> seleccionarPersonaje6 --> clickFijar6 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje6 --"Else"--> clickPersonaje7 --> seleccionarPersonaje7 --> clickFijar7 --> seleccionarRunas --> exitKeys
+    seleccionarPersonaje7 --"Else"--> clickPersonaje8 --> seleccionarPersonaje8 --> clickFijar8 --> seleccionarRunas --> exitKeys
