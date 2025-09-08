@@ -8,14 +8,14 @@ The consequences vary according to Riot's terms and conditions and include the b
 
 
 ---
-This is a League of Legends complex bot. Able to Spam Games again the AI again and again and doesn't stop until you keep pressed [ESC]
+This is a League of Legends simple bot. Able to Spam Games against the AI again and again and doesn't stop until you keep pressed [ESC]
 
 The first time you need to wait a few minutes in-game to generate cache for this bot and so that its execution can be easier and more fluid. It is very important to **previously execute in a controlled environment**
 
 ![Execution Samp](https://github.com/user-attachments/assets/386cebb4-12cd-475a-9000-981ab9cf8c68)
 
-
 ---
+
 
 # Descripción
 El desarrollo de este bot fue utilizando librerías de reconocimiento y automatización:
